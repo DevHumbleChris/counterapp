@@ -36,7 +36,8 @@ fun CounterApp(navController: NavHostController) {
                 horizontalArrangement = Arrangement.SpaceEvenly,
             ) {
                 Column(
-                    verticalArrangement = Arrangement.Center
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     IconButton(onClick = {
                         navController.navigate("home")
@@ -52,7 +53,8 @@ fun CounterApp(navController: NavHostController) {
                 }
 
                 Column(
-                    verticalArrangement = Arrangement.Center
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     IconButton(onClick = {
                         navController.navigate("settings")
@@ -77,7 +79,7 @@ fun CounterApp(navController: NavHostController) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(it),
-            color = Color(android.graphics.Color.parseColor("#fbfbfd"))
+            color = Color(android.graphics.Color.parseColor("#f1f1f9"))
         ) {
             NavigationArena(navController)
         }
