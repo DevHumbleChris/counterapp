@@ -23,9 +23,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.counterapp.screens.NavigationArena
+import com.example.counterapp.viewmodels.CounterViewModel
 
 @Composable
-fun CounterApp(navController: NavHostController) {
+fun CounterApp(navController: NavHostController, counterViewModel: CounterViewModel) {
     Scaffold(
         bottomBar = {
             Row(
@@ -81,7 +82,7 @@ fun CounterApp(navController: NavHostController) {
                 .padding(it),
             color = Color(android.graphics.Color.parseColor("#f1f1f9"))
         ) {
-            NavigationArena(navController)
+            NavigationArena(navController, counterViewModel)
         }
     }
 }
