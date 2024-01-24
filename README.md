@@ -14,8 +14,9 @@ Features
 - Responsive and user-friendly UI.
 - Efficient state management using Jetpack Compose.
 
-Screenshots
+Preview
 -----------
+<img src="./public/preview.gif" />
 
 Technologies Used
 -----------------

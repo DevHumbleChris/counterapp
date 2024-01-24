@@ -14,6 +14,8 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.ImeAction
@@ -49,31 +51,6 @@ fun SettingsScreen(counterViewModel: CounterViewModel) {
                     imeAction = ImeAction.Done
                 )
             )
-        }
-        Spacer(modifier = Modifier.height(30.dp))
-        Column {
-            Text(text = "Moods:", color = Color(android.graphics.Color.parseColor("#8a4af3")))
-            Spacer(modifier = Modifier.height(10.dp))
-            Text(
-                text = "Update the default increment, decrement and clear values.",
-                color = Color(android.graphics.Color.parseColor("#c4a4f9"))
-            )
-            Spacer(modifier = Modifier.height(15.dp))
-            val tryitems = (1..3).map { "Item" }
-            LazyVerticalGrid(
-                columns = GridCells.Fixed(3),
-                verticalArrangement = Arrangement.spacedBy(3.dp),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
-                items(tryitems) {
-                    Column {
-                        Text(text = "Adding")
-                        Spacer(modifier = Modifier.height(10.dp))
-                        OutlinedTextField(value = "", onValueChange = {})
-                    }
-                    Spacer(modifier = Modifier.width(5.dp))
-                }
-            }
         }
     }
 }
