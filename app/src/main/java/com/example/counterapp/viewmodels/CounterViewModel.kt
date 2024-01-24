@@ -1,5 +1,6 @@
 package com.example.counterapp.viewmodels
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
@@ -9,7 +10,7 @@ class CounterViewModel: ViewModel() {
     var counterValue by mutableIntStateOf(8)
         private set
 
-    var updatedCounter by mutableIntStateOf(counterValue - counterValue)
+    var updatedCounter by mutableIntStateOf(0)
         private set
 
     var leftOfCounter by mutableIntStateOf(counterValue)
@@ -26,11 +27,13 @@ class CounterViewModel: ViewModel() {
     }
 
     fun clearCounter () {
-        updatedCounter = counterValue -counterValue
+        updatedCounter = 0
         leftOfCounter = counterValue
     }
 
-    fun setUserCounterValue (userValue: String) {
-        counterValue = userValue.toInt()
+    fun setUserCounterValue (userValue: Int) {
+        counterValue = userValue
+        leftOfCounter = userValue
+        updatedCounter = 0
     }
 }

@@ -19,7 +19,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import com.example.counterapp.viewmodels.CounterViewModel
 
 @Composable
@@ -36,8 +35,9 @@ fun SettingsScreen(counterViewModel: CounterViewModel) {
             )
             Spacer(modifier = Modifier.height(5.dp))
             OutlinedTextField(
-                value = counterViewModel.counterValue.toString(), onValueChange = {
-                    counterViewModel.setUserCounterValue(userValue = it)
+                value = counterViewModel.counterValue.toString(), onValueChange = { text ->
+                    val intValue = text.toIntOrNull() ?: 0
+                    counterViewModel.setUserCounterValue(userValue = intValue)
                 },
                 label = {
                     Text(text = "Counter Value")
